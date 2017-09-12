@@ -21,7 +21,14 @@ $ sudo su
 
 This should download, init and run the build process. If all went fine, you will have a cmdfs-latest.deb file in the work folder.
 
-Now run:
+That's it, ready to go:
+### Docker
+```sh
+# docker build -t cmdfs-image .
+# docker run -d -v /HOSTFOTODIR:/hostSource:ro -v /HOSTFILTEREDFOTOSDIR:/hostTarget:shared --privileged cmdfs-image
+```
+
+### Or docker-compose
 ```sh
 # docker-compose build
 # docker-compose up -d
