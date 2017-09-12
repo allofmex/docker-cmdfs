@@ -1,5 +1,5 @@
 # Cmdfs in docker
-
+# WARNING: This instruction is not ready yet! We are waiting for some fixes in cmdfs project!
 This is a docker implementation of [cmdfs fuse file system](https://github.com/mikeswain/cmdfs).
 
 Usage examples:
@@ -15,7 +15,7 @@ Before we can use cmdfs we need to compile it from source. We will do this in a 
 
 ```sh
 $ sudo su
-# cd /pathToWhereYouExtracted
+# cd /HOSTPATHOFCMDFSFILES
 # ./build.sh
 ```
 
@@ -28,11 +28,16 @@ That's it, ready to go:
 # docker run -d -v /HOSTFOTODIR:/hostSource:ro -v /HOSTFILTEREDFOTOSDIR:/hostTarget:shared --privileged cmdfs-image
 ```
 
-### Or docker-compose
+### Or if you prefer docker-compose
 ```sh
 # docker-compose build
 # docker-compose up -d
 ```
+
+In this case the container will use the example configuration in folder config-example. It's configured to:
+- mount a folder photos_all in your HOSTFILTEREDFOTOSDIR, containing a downscaled version of all jpg,png,... files 
+- a second folder photos_landscape which uses the first photos_all as input but presents only photos that have landscape aspect ratio (wider than high)
+
 ### Customization
 If not specified, the container will use config in config-example. You may want to use your own filter settings. Just copy folder config-example to /HOSTPATHOFCMDFSFILES/config and add 
 ```sh
@@ -40,14 +45,14 @@ If not specified, the container will use config in config-example. You may want 
 ```
 in docker run command or uncomment the correspondending line in docker-compose.yml if you use compose
 
-For debugging:
-
+### Debugging:
+To see if container is STATUS UP and to get container name:
 ```sh
 # docker ps
 ```
-To see if container is STATUS UP
 
+For more info about startup:
 ```sh
 # docker logs CONTAINERNAME
 ```
-For more info about startup
+
