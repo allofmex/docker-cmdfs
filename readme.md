@@ -1,4 +1,4 @@
-# Dillinger
+# Cmdfs in docker
 
 This is a docker implementation of [cmdfs fuse file system](https://github.com/mikeswain/cmdfs).
 
