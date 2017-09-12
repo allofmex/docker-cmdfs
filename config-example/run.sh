@@ -7,6 +7,9 @@ MY_PATH="`( cd \"$MY_PATH\" && pwd )`"
 CACHE=10000
 #cmdfs cache dir
 CACHE_DIR="/c"
+mkdir -p $CACHE_DIR
+chmod a+w $CACHE_DIR
+
 set -x
 
 # SIGTERM-handler to umount on container exit
@@ -24,8 +27,6 @@ trap 'kill ${!}; term_handler' SIGTERM
 trap 'kill ${!}; term_handler' SIGQUIT
 
 mkdir -p /hostTarget/photos_all /hostTarget/photos_landscape
-mkdir -p $CACHE_DIR
-#chmod uga+w $CACHE_DIR
 echo "mount cmdfs"
 #cmdfs /hostSource /hostTarget -s -o extension="JPG;PNG",hide-empty-dirs
 #cmdfs /hostSource /hostTarget -s -o "command=convert - -resize 1920x1080 -,extension=jpg;gif;png,cache-dir=$CACHE_DIR"
