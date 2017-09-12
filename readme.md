@@ -21,3 +21,20 @@ $ sudo su
 
 This should download, init and run the build process. If all went fine, you will have a cmdfs-latest.deb file in the work folder.
 
+Now run:
+```sh
+# docker-compose build
+# docker-compose up -d
+```
+
+For debugging:
+
+```sh
+# docker ps
+```
+To see if container is STATUS UP
+
+```sh
+# docker logs CONTAINERNAME
+```
+For more info about startup
