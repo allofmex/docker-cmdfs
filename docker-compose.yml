@@ -1,0 +1,14 @@
+version: "3"
+services:
+  mounter:
+    build: .
+    volumes:
+      - /HostPhotoDir:/hostSource:ro
+      - /mnt/dynamically_created/Photos/:/hostTarget/:shared
+      #- /docker_data/cmdfs/config/:/etc/cmdfs/
+      #- /HostCmdfsCacheDir:/c
+      #- /dev/log:/dev/log
+    privileged: true
+
+
+
