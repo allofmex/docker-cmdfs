@@ -43,6 +43,8 @@ docker run -d -v /HOSTFOTODIR:/hostSource:ro -v /HOSTFILTEREDFOTOSDIR:/hostTarge
 ```
 
 #### Or if you prefer docker-compose
+Edit `docker-compose.yml` based on your environment first.
+Then:
 ```sh
 docker-compose build
 docker-compose up -d
