@@ -8,4 +8,16 @@ Usage examples:
 - run automatic rsync backups of downscaled versions of your fullsize photos
 - many more
 
+### How to use
+
+Download and extract all these files to a folder on your host.
+Before we can use cmdfs we need to compile it from source. We will do this in a termporary gcc container to keep the host clean:
+
+```sh
+$ sudo su
+# cd /pathToWhereYouExtracted
+# ./build.sh
+```
+
+This should download, init and run the build process. If all went fine, you will have a cmdfs-latest.deb file in the work folder.
 
