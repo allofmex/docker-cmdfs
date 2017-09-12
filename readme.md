@@ -33,6 +33,12 @@ That's it, ready to go:
 # docker-compose build
 # docker-compose up -d
 ```
+### Customization
+If not specified, the container will use config in config-example. You may want to use your own filter settings. Just copy folder config-example to /HOSTPATHOFCMDFSFILES/config and add 
+```sh
+-v /HOSTPATHOFCMDFSFILES/config:/etc/cmdfs/
+```
+in docker run command or uncomment the correspondending line in docker-compose.yml if you use compose
 
 For debugging:
 
