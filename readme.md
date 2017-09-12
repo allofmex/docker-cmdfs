@@ -15,7 +15,7 @@ Some possibilities:
 ## How to use
 
 **Download and extract** all these files to a folder on your host.
-Before we can use cmdfs we need to compile it from source. We will do this in a termporary gcc container to keep the host clean:
+Before we can use cmdfs we need to compile it from source. We will do this in a temporary gcc container to keep the host clean:
 
 ```sh
 sudo su
