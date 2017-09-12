@@ -21,10 +21,19 @@ $ sudo su
 
 This should download, init and run the build process. If all went fine, you will have a cmdfs-latest.deb file in the work folder.
 
-That's it, ready to go:
+Prepare mount points where your filtered folder should appear:
+```sh
+# mkdir /HOSTFILTEREDFOTOSDIR
+# chmod a+w /HOSTFILTEREDFOTOSDIR
+```
+
+Now we have cmdfs ready to be installed in a container:
+
 ### Docker
+Build image and run container
 ```sh
 # docker build -t cmdfs-image .
+
 # docker run -d -v /HOSTFOTODIR:/hostSource:ro -v /HOSTFILTEREDFOTOSDIR:/hostTarget:shared --privileged cmdfs-image
 ```
 
