@@ -1,5 +1,5 @@
 # CMDFS in docker
-# WARNING: This instruction is not ready yet! We are waiting for some fixes in cmdfs project! (2017 Sep 12)
+# WARNING: This instruction is not ready yet! We are waiting for some fixes in cmdfs project! (2017 Sep 25)
 This is a docker container using [cmdfs fuse file system](https://github.com/mikeswain/cmdfs).
 
 Usage examples:
