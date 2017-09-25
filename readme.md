@@ -15,7 +15,14 @@ Some possibilities:
 ## How to use
 
 **Download and extract** all these files to a folder on your host.
+
+Or use git to download
+```sh
+git clone https://github.com/allofmex/docker-cmdfs.git
+```
+
 Before we can use cmdfs we need to compile it from source. We will do this in a temporary gcc container to keep the host clean:
+
 
 ```sh
 sudo su
