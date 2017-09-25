@@ -35,7 +35,7 @@ echo "mount cmdfs"
 #-s important, single threaded. If not used, cmdfs crashes after a while
 cmdfs /hostSource /hostTarget/photos_all -s -o "extension=jpg;jpeg;gif;png,monitor,command=$MY_PATH/img_filter.sh,cache-dir=$CACHE_DIR,cache-size=$CACHE,allow_other"
 cmdfs /hostTarget/photos_all /hostTarget/photos_landscape -s \
-  -o "cache-dir=/tmp,cache-entries=2,path-re=.*[#][L][5-9].*,optout-re,extension=jpg;jpeg;gif;png,hide-empty-dirs,command=$MY_PATH/img_filter_land.sh,allow_other"
+  -o "cache-dir=/tmp,cache-entries=2,exclude-re=.*[#][L][5-9].*,extension=jpg;jpeg;gif;png,hide-empty-dirs,command=$MY_PATH/img_filter_land.sh,allow_other"
 
 # wait forever (to keep container running)
 while true
