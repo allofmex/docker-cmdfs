@@ -21,7 +21,7 @@ Before we can use cmdfs we need to compile it from source. We will do this in a 
 sudo su
 cd /HOSTPATHOFCMDFSFILES
 chmod u+x build.sh
-chmod a+x config-example/run.sh
+chmod a+x config-example/*.sh
 ./build.sh
 ```
 
